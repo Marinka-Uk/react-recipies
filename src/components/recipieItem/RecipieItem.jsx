@@ -1,13 +1,40 @@
+import { Item, SubTittle, Image, Text, Tittle, DetailItem } from './RecipieItem.styled';
 
+export function RecipeItem({
+  name,
+  time,
+  servings,
+  calories,
+  difficulty,
+  image,
+  clock: Clock,
+  burger: Burger,
+  star: Star,
+  bowl: Bowl,
+}) {
+  return (
 
-
-export function RecipeItem ({name, time, servings,calories, difficulty, image, clock:Clock, burger:Burger, star:Star, bowl:Bowl}){
-    return <li>
-        <h2>{name}</h2>
-        <p><Clock size ={20} />min:{time}</p>
-        <p><Bowl size = {20}/>servings:{servings}</p>
-        <p><Burger size = {20}/>calories:{calories}</p>
-        <p><Star size = {20}/>difficulty:{difficulty}</p>
-    <img src={image}alt={name} width="250px"/> 
-    </li>
+    <Item>
+        <DetailItem>
+      <Tittle>{name}</Tittle>
+      <Text>
+        <Clock size={20} />
+        min:{time}
+      </Text>
+      <Text>
+        <Bowl size={20} />
+        servings:{servings}
+      </Text>
+      <Text>
+        <Burger size={20} />
+        calories:{calories}
+      </Text>
+      <Image src={image} alt={name} width="250px" />
+      <SubTittle>
+        <Star size={20} />
+        difficulty:{difficulty}
+      </SubTittle>
+      </DetailItem>
+    </Item>
+  );
 }
